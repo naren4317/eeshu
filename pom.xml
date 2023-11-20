@@ -29,6 +29,25 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+			    <cloudHubDeployment>
+			      <uri>https://anypoint.mulesoft.com</uri>
+			      <muleVersion>4.5.1</muleVersion>
+			      <username>narenderg3</username>
+			      <password>Narenderg3</password>
+			      <applicationName>eeshu</applicationName>
+			      <environment>Sandbox</environment>
+			      
+			      <workers>1</workers>
+			      <workerType>Micro</workerType>
+				  <objectStoreV2>true</objectStoreV2>
+				  
+				  <region>us-east-2</region>
+			      <properties>
+			        <key>value</key>
+			      </properties>
+			    </cloudHubDeployment>
+			  </configuration>
 			</plugin>
 		</plugins>
 	</build>
