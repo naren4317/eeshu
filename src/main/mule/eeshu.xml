@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f8ec4c09-4ffc-4ccd-8272-dc13f9813715" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="eeshuFlow" doc:id="dd129f29-65d9-4ed0-b9d5-80e8c3128351" >
+		<http:listener doc:name="Listener" doc:id="f91c911f-5f1e-4307-88c7-d17553994b8c" config-ref="HTTP_Listener_config" path="/eeshu"/>
+		<set-payload value='#["eeshu"]' doc:name="Set Payload" doc:id="076c3967-96bc-421d-bd59-5b5d51aa9b08" />
+	</flow>
+</mule>
